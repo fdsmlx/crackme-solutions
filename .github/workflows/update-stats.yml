@@ -35,14 +35,13 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Check if any README files changed (in any directory)
-          if git diff --name-only HEAD | grep -q "README.md"; then
-            echo "Changes detected in README files"
-            git add --all **/README.md
-            git commit -m "chore: auto-update statistics and convert image links [skip ci]"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+            exit 0
+          else
+            echo "Changes detected, committing"
+            git commit -m "auto-update statistics [skip ci]"
             git remote set-url origin git@github.com:fdsmlx/crackme-solutions.git
             git push origin main
-          else
-            echo "No changes in README files"
-            exit 0
           fi
