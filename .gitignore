@@ -1,0 +1,42 @@
+# Obsidian
+.obsidian/
+
+# Editor
+.vscode/
+.idea/
+.claude/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.bak
+*.log
+
+# Personal notes (optional - uncomment if needed)
+# notes/
+# TODO.md
+
+# WIP crackmes
+02-puzzle-funny/
